@@ -18,6 +18,25 @@
 .env.test.local
 .env.production.local
 
+# react
+.DS_*
+*.log
+logs
+**/*.backup.*
+**/*.back.*
+
+bower_components
+
+*.sublime*
+
+.idea/
+
+psd
+thumb
+sketch
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+package-lock.json

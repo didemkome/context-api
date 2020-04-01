@@ -1,21 +1,31 @@
 import React, { useContext } from "react";
 
-import { updateUser } from "../../core/context/actions";
-import { MainContext } from "../../core/context/store";
-
-import {Container} from "./style";
+import {addUser, removeUser, updateUser} from "../../core/context/actions";
+import { UserContext} from "../../core/context/store";
+import {Container, ButtonContainer} from "./style";
 
 const Button = () => {
-    const { dispatch } = useContext(MainContext);
+    const { dispatch } = useContext(UserContext);
 
     return (
         <Container>
-        <button
-        type="button"
-        onClick={() => dispatch(updateName())}
-    >
-        Update
-        </button>
+            <ButtonContainer
+                type="button"
+                onClick={() => dispatch(updateUser())}
+            >
+                Update
+            </ButtonContainer>
+
+            <ButtonContainer
+                onClick={() =>
+                    dispatch(addUser())
+                }
+            >
+                Add User
+            </ButtonContainer>
+            <ButtonContainer onClick={() => dispatch(removeUser())}>
+                Remove User
+            </ButtonContainer>
         </Container>
     )
 };
